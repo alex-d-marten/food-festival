@@ -12,6 +12,11 @@ module.exports = {
         path: __dirname + "/dist",
         filename: '[name].bundle.js'
     },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, '/'),
+        },
+    },
     module: {
         rules: [
             {
@@ -42,7 +47,7 @@ module.exports = {
             jQuery: "jquery"
         }),
         new BundleAnalyzerPlugin({
-            analyzerMode: "static", 
+            analyzerMode: "disabled", 
         })
     ],
     mode: 'development'
